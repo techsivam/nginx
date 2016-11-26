@@ -1,13 +1,35 @@
-
 <!DOCTYPE html>
 <html>
-<body>
-<H1> Siva Prakash</H1>
-<p id="demo"></p>
-
+<head>
 <script>
-document.getElementById("demo").innerHTML = Date();
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+     var d = today.getDate();
+     var month = today.getMonth();
+     var year = today.getFullYear();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML = d+"/"+(month+1)+"/"+year+" -   "+
+    h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
 </script>
+</head>
+
+<body onload="startTime()">
+
+<H1> This is Demo Docker Page</H1>
+
+<div id="txt"></div>
+<H1> By</H1>
+<H1> Siva Prakash</H1>
 
 </body>
 </html>
